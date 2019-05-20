@@ -187,7 +187,7 @@ a {
 	display: block;
 	text-align: left;
 	background: #3685C2;
-	height: 120px;
+	height: 110px;
 }
 
 #hospitalName {
@@ -233,18 +233,11 @@ a {
             infoDetails.style.display = (infoDetails.style.display == "block") ? "none" : "block";
         }
         function init() {
-            initLinks();
             load("/bahmni_revisions/bahmni_openmrs_revision.json", 'bahmni');
             load("/bahmni_revisions/bahmni_openelis_revision.json", 'elis');
             load("/bahmni_revisions/bahmni_openerp_revision.json", 'erp');
             serverTimeZone();
             getLogoAndHeaderText();
-        }
-        function initLinks() {
-            var erpElement = document.getElementById("erp-app-link");
-            if (erpElement) {
-                                                                            erpElement.href = "http://10.0.2.15:8069";
-                                                                    }
         }
         function load(url, elementClass) {
             callAjax(url, function (data) {
@@ -333,12 +326,15 @@ a {
                         var headerTextElement = document.getElementsByClassName("helper_url")[0];
                         headerTextElement.href = data.helpLink.url;
                     }
-                    if(data.homePage.title_text) {
-                        var titleTextElement = document.getElementsByClassName("title_text")[0] ;
-                        titleTextElement.innerHTML = data.homePage.title_text;
+                    if(data.homePage.hospitalName) {
+                        var titleTextElement = document.getElementsByClassName("hospitalName")[0] ;
+                        titleTextElement.innerHTML = data.homePage.hospitalName;
                     }
                     if (data.homePage.bottomBanner){
                         document.getElementById("bottom-banner-image").src = data.homePage.bottomBanner;
+                    }
+                    if (data.homePage.erpUrl){
+                        document.getElementById("erp-app-link").href = data.homePage.erpUrl;
                     }
                 }
             });
@@ -352,12 +348,11 @@ a {
 		<table style="width: 100%">
 			<tr>
 				<td style="width: 12%"><img class="client_logo" src="/images/bahmniLogoFull.png" /><img
-					class="client_logo" src="/images/mohLogo.png" /><span
-					class="title_text"> TITLE TEXT </span></td>
+					class="client_logo" src="/images/mohLogo.png" /></td>
 				<td><span class="mohLabel">Cameroon Ministry of Public
 						Health<br /> Ministère de la Santé Publique du Cameroun
 				</span></td>
-				<td id="hospitalName">Hopital de District de la Cité Verte</td>
+				<td id="hospitalName" class="hospitalName">Hopital name</td>
 			</tr>
 		</table>
 	</div>
