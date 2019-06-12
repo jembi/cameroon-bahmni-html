@@ -12,7 +12,7 @@ body {
 	overflow: hidden;
 	line-height: normal;
     background: #ffffff;
-	min-width:650px;
+	min-width:600px;
 }
 
 .client-logo-wrapper {
@@ -37,7 +37,7 @@ body {
 	min-width:140px;
 }
 
-img.client_logo{height:100%; max-height:80px;}
+img.client_logo{max-height:80px;}
 
 #headerContent .moh{
 	position: relative;
@@ -67,7 +67,7 @@ img.client_logo{height:100%; max-height:80px;}
 
 .header_text {
 	text-align: center;
-	margin: 30px auto 50px;
+	margin: 20px auto;
 	color: #333;
 	width: 100%;
 }
@@ -212,32 +212,24 @@ img.client_logo{height:100%; max-height:80px;}
 }
 
 @media (min-width: 0px) 
-and (max-width: 799px) {
+and (max-width: 600px) {
 
     #headerContent .logos {
         min-width: 70px;
-        padding: 2em 0.5em 0 1em;
+        padding: 1.7em 0.5em 0 1em;
     }
-
-    .client-logo-wrapper{
-        max-height: 80px;
-    }
-
-    .header_text{display:none;}
-
     img.client_logo {
         max-height: 60px;
     }
     #headerContent .hospitalName{
-        font-size: 18px;
-        padding: 2.5em 0.5em 0 0;
+        display:none;
     }
     #headerContent .moh {
-        padding: 2.4em 0 0;
+        padding: 2em 0 0;
     }
     #mohLabel {
-    font-size: 11px;
-    line-height:22px;
+    font-size: 13px;
+    line-height:21px;
     }
     .warning-message p {
         font-size: 10px;
@@ -248,8 +240,48 @@ and (max-width: 799px) {
 	.container {
     	margin: 20px auto;
 	}
+	.header_text .welcome {
+	font-size: 14px;
+	}
+	.header_text .emrs {
+		font-size: 22px;
+		font-weight: 800;
+	}
+	.header_text .hospital {
+		font-size: 14px;
+	}
 }
-@media (min-width: 800px) 
+
+@media (min-width: 601px) 
+and (max-width: 768px) {
+
+    #headerContent .hospitalName{
+        display:none;
+    }
+    #headerContent .moh {
+        padding: 2.4em 0 0;
+    }
+    #mohLabel {
+    font-size: 15px;
+    line-height:22px;
+    }
+    .warning-message p {
+        font-size: 10px;
+	}
+	.header_text .welcome {
+	font-size: 14px;
+	}
+	.header_text .emrs {
+		font-size: 22px;
+		font-weight: 800;
+	}
+	.header_text .hospital {
+		font-size: 14px;
+	}
+
+}
+
+@media (min-width: 769px) 
   and (max-width: 1024px) {
 
     #headerContent .logos {
@@ -260,12 +292,18 @@ and (max-width: 799px) {
         max-height: 70px;
     }
     #headerContent .hospitalName{
-        font-size: 22px;
-        padding: 1.7em 0.5em 0 0;
+        font-size: 18px;
+        padding: 2.4em 0.5em 0 0;
     }
     #mohLabel {
     font-size: 14px;
     line-height:24px;
+	}
+    .container>h4 {
+		font-size: 13px;
+    }
+    .warning-message p {
+        font-size: 10px;
 	}
 	.header_text .welcome {
 	font-size: 16px;
@@ -277,12 +315,7 @@ and (max-width: 799px) {
 	.header_text .hospital {
 		font-size: 18px;
 	}
-    .container>h4 {
-		font-size: 13px;
-    }
-    .warning-message p {
-        font-size: 10px;
-    }
+}
 
 </style>
 <script>
